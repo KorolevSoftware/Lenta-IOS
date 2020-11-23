@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57020089256C0EEB00F3392B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57020088256C0EEB00F3392B /* UIImage.swift */; };
+		578AFADA2568090000D3A549 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578AFAD92568090000D3A549 /* ImageCell.swift */; };
+		578AFADC25680B5000D3A549 /* ScrollImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578AFADB25680B5000D3A549 /* ScrollImage.storyboard */; };
+		578AFADE256815B100D3A549 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578AFADD256815B100D3A549 /* PictureModel.swift */; };
+		578AFAE025681BBB00D3A549 /* NetworkFlickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578AFADF25681BBB00D3A549 /* NetworkFlickr.swift */; };
+		578AFAE225683E1300D3A549 /* PicturePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578AFAE125683E1300D3A549 /* PicturePage.swift */; };
+		579FA8AB256AFBE600858CED /* ImageInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579FA8AA256AFBE600858CED /* ImageInfoController.swift */; };
+		57AFC9032567E91E00C32180 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFC9022567E91E00C32180 /* AppDelegate.swift */; };
+		57AFC9052567E91E00C32180 /* ScrollImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFC9042567E91E00C32180 /* ScrollImageController.swift */; };
+		57AFC90B2567E91E00C32180 /* Lenta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57AFC9092567E91E00C32180 /* Lenta.xcdatamodeld */; };
+		57AFC90D2567E92000C32180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57AFC90C2567E92000C32180 /* Assets.xcassets */; };
+		57AFC9102567E92000C32180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFC90E2567E92000C32180 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		57020088256C0EEB00F3392B /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		578AFAD92568090000D3A549 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		578AFADB25680B5000D3A549 /* ScrollImage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScrollImage.storyboard; sourceTree = "<group>"; };
+		578AFADD256815B100D3A549 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
+		578AFADF25681BBB00D3A549 /* NetworkFlickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFlickr.swift; sourceTree = "<group>"; };
+		578AFAE125683E1300D3A549 /* PicturePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePage.swift; sourceTree = "<group>"; };
+		579FA8AA256AFBE600858CED /* ImageInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfoController.swift; sourceTree = "<group>"; };
+		57AFC8FF2567E91E00C32180 /* Lenta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lenta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57AFC9022567E91E00C32180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		57AFC9042567E91E00C32180 /* ScrollImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollImageController.swift; sourceTree = "<group>"; };
+		57AFC90A2567E91E00C32180 /* Lenta.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lenta.xcdatamodel; sourceTree = "<group>"; };
+		57AFC90C2567E92000C32180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57AFC90F2567E92000C32180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		57AFC9112567E92000C32180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57AFC8FC2567E91E00C32180 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5702008A256C0F4700F3392B /* Image Info Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5702008B256C0F5C00F3392B /* Controller */,
+			);
+			path = "Image Info Screen";
+			sourceTree = "<group>";
+		};
+		5702008B256C0F5C00F3392B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				579FA8AA256AFBE600858CED /* ImageInfoController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		578AFACF2567F3D700D3A549 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				578AFAD32567F49800D3A549 /* Extension */,
+				578AFAD22567F46C00D3A549 /* Controller */,
+				578AFAD12567F46200D3A549 /* View */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		578AFAD12567F46200D3A549 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				578AFADB25680B5000D3A549 /* ScrollImage.storyboard */,
+				57AFC90E2567E92000C32180 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		578AFAD22567F46C00D3A549 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57AFC9022567E91E00C32180 /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		578AFAD32567F49800D3A549 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				57020088256C0EEB00F3392B /* UIImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		578AFAD42567F4B000D3A549 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				57AFC90C2567E92000C32180 /* Assets.xcassets */,
+				57AFC9112567E92000C32180 /* Info.plist */,
+				57AFC9092567E91E00C32180 /* Lenta.xcdatamodeld */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		578AFAD52567F5E200D3A549 /* Scroll Image Screen  */ = {
+			isa = PBXGroup;
+			children = (
+				578AFAD62567F60400D3A549 /* Model */,
+				578AFAD82567F61500D3A549 /* Controller */,
+				578AFAD72567F60B00D3A549 /* View */,
+			);
+			path = "Scroll Image Screen ";
+			sourceTree = "<group>";
+		};
+		578AFAD62567F60400D3A549 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				578AFADD256815B100D3A549 /* PictureModel.swift */,
+				578AFADF25681BBB00D3A549 /* NetworkFlickr.swift */,
+				578AFAE125683E1300D3A549 /* PicturePage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		578AFAD72567F60B00D3A549 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				578AFAD92568090000D3A549 /* ImageCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		578AFAD82567F61500D3A549 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57AFC9042567E91E00C32180 /* ScrollImageController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		57AFC8F62567E91E00C32180 = {
+			isa = PBXGroup;
+			children = (
+				57AFC9012567E91E00C32180 /* Lenta */,
+				57AFC9002567E91E00C32180 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57AFC9002567E91E00C32180 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57AFC8FF2567E91E00C32180 /* Lenta.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57AFC9012567E91E00C32180 /* Lenta */ = {
+			isa = PBXGroup;
+			children = (
+				578AFACF2567F3D700D3A549 /* Application */,
+				578AFAD52567F5E200D3A549 /* Scroll Image Screen  */,
+				5702008A256C0F4700F3392B /* Image Info Screen */,
+				578AFAD42567F4B000D3A549 /* Support Files */,
+			);
+			path = Lenta;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57AFC8FE2567E91E00C32180 /* Lenta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57AFC9142567E92000C32180 /* Build configuration list for PBXNativeTarget "Lenta" */;
+			buildPhases = (
+				57AFC8FB2567E91E00C32180 /* Sources */,
+				57AFC8FC2567E91E00C32180 /* Frameworks */,
+				57AFC8FD2567E91E00C32180 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lenta;
+			productName = Lenta;
+			productReference = 57AFC8FF2567E91E00C32180 /* Lenta.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57AFC8F72567E91E00C32180 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Dmitry Korolev";
+				TargetAttributes = {
+					57AFC8FE2567E91E00C32180 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 57AFC8FA2567E91E00C32180 /* Build configuration list for PBXProject "Lenta" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 57AFC8F62567E91E00C32180;
+			productRefGroup = 57AFC9002567E91E00C32180 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57AFC8FE2567E91E00C32180 /* Lenta */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57AFC8FD2567E91E00C32180 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57AFC9102567E92000C32180 /* LaunchScreen.storyboard in Resources */,
+				578AFADC25680B5000D3A549 /* ScrollImage.storyboard in Resources */,
+				57AFC90D2567E92000C32180 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57AFC8FB2567E91E00C32180 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				578AFADE256815B100D3A549 /* PictureModel.swift in Sources */,
+				57AFC9052567E91E00C32180 /* ScrollImageController.swift in Sources */,
+				578AFAE225683E1300D3A549 /* PicturePage.swift in Sources */,
+				578AFADA2568090000D3A549 /* ImageCell.swift in Sources */,
+				57AFC9032567E91E00C32180 /* AppDelegate.swift in Sources */,
+				57AFC90B2567E91E00C32180 /* Lenta.xcdatamodeld in Sources */,
+				57020089256C0EEB00F3392B /* UIImage.swift in Sources */,
+				578AFAE025681BBB00D3A549 /* NetworkFlickr.swift in Sources */,
+				579FA8AB256AFBE600858CED /* ImageInfoController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		57AFC90E2567E92000C32180 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57AFC90F2567E92000C32180 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		57AFC9122567E92000C32180 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		57AFC9132567E92000C32180 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57AFC9152567E92000C32180 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/Lenta/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dmitry.Lenta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		57AFC9162567E92000C32180 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/Lenta/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dmitry.Lenta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57AFC8FA2567E91E00C32180 /* Build configuration list for PBXProject "Lenta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57AFC9122567E92000C32180 /* Debug */,
+				57AFC9132567E92000C32180 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57AFC9142567E92000C32180 /* Build configuration list for PBXNativeTarget "Lenta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57AFC9152567E92000C32180 /* Debug */,
+				57AFC9162567E92000C32180 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		57AFC9092567E91E00C32180 /* Lenta.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				57AFC90A2567E91E00C32180 /* Lenta.xcdatamodel */,
+			);
+			currentVersion = 57AFC90A2567E91E00C32180 /* Lenta.xcdatamodel */;
+			path = Lenta.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 57AFC8F72567E91E00C32180 /* Project object */;
+}
