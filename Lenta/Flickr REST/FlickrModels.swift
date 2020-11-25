@@ -70,44 +70,44 @@ struct FlickrPicture:ProtoModel {
 }
 
 
-struct FlickrPictureContainer:Decodable
-{
-    let photo:FlickrPhotoInfo
-}
-struct FlickrPhotoInfo: Decodable {
-    let id:String
-    let title:Title
-    let views:String
-    let dates:FlDate	
-    let owner:Owner
-    let description:Description
-    
-    struct Owner: Decodable {
-        let realname:String
-    }
-    
-    struct Title: Decodable  {
-        let _content:String
-    }
-    
-    struct Description: Decodable  {
-        let _content:String
-    }
-    
-    struct FlDate: Decodable  {
-        let posted:String
-    }
-}
-
-struct FlickrImageSizes: Decodable {
-    let sizes:SizesInfo
-    
-    struct SizesInfo: Decodable {
-        let size:[Size]
-    }
-    struct Size: Decodable {
-        let label:String
-        let url:URL
-    }
-    
-}
+//struct FlickrPictureContainer:Decodable
+//{
+//    let photo:FlickrPhotoInfo
+//}
+//struct FlickrPhotoInfo: Decodable {
+//    let id:String
+//    let title:Title
+//    let views:String
+//    let dates:FlDate
+//    let owner:Owner
+//    let description:Description
+//
+//    struct Owner: Decodable {
+//        let realname:String
+//    }
+//
+//    struct Title: Decodable  {
+//        let _content:String
+//    }
+//
+//    struct Description: Decodable  {
+//        let _content:String
+//    }
+//    
+//    struct FlDate: Decodable  {
+//        let posted:String
+//    }
+//}
+//
+//struct FlickrImageSizes: Decodable {
+//    let sizes:SizesInfo
+//
+//    struct SizesInfo: Decodable {
+//        let size:[Size]
+//    }
+//    struct Size: Decodable {
+//        let label:String
+//        let url:URL
+//    }
+//
+//}
