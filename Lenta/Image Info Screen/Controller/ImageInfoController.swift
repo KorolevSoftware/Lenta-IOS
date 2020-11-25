@@ -12,12 +12,14 @@ class ImageInfoController: UIViewController {
 
     @IBOutlet weak var picture: UIImageView!
     
-    var model:Picture?
+    var model:ProtoModel?
+    var repository:ProtoRepository!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let data = model?.image {
-            picture.image = UIImage(data: data)
+        guard let model = model else { return }
+        repository.getOrigImage(picture: model) { data in
+            self.picture.image = UIImage(data: data)
         }
     }
     

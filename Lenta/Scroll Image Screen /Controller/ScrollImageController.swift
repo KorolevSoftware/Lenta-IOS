@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ScrollViewController.swift
 //  Lenta
 //
 //  Created by Dmitry Korolev on 20.11.2020.
@@ -8,17 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    var data = [Picture]()
+class ScrollViewController: UIViewController {
+    var data = [ProtoModel]()
     
     @IBOutlet weak var tableView:UITableView!
+
+    var repository:FlickrRepository?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkFlickr().getData { pictures in
-            self.data = pictures
-            self.tableView.reloadData()
+        
+        repository = FlickrRepository()
+        
+        if let repository = repository {
+            repository.getData { pictures in
+                self.data = pictures
+                self.tableView.reloadData()
+            }
         }
         // Do any additional setup after loading the view.
     }
@@ -31,15 +37,16 @@ class ViewController: UIViewController {
             {
                 let dcv = segue.destination as! ImageInfoController
                 dcv.model = data[indexPath.row]
+                dcv.repository = repository
             }
         }
     }
 }
 
 
-extension ViewController:UITabBarDelegate{}
+extension ScrollViewController:UITabBarDelegate{}
 
-extension ViewController:UITableViewDataSource {
+extension ScrollViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -48,6 +55,7 @@ extension ViewController:UITableViewDataSource {
         let newImageCell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
         
         newImageCell.bind(picture: data[indexPath.row])
+        newImageCell.repository = repository
         return newImageCell
     }
 }
