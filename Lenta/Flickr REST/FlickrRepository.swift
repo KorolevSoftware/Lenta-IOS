@@ -12,18 +12,14 @@ import Foundation
 
 class FlickrRepository: ProtoRepository
 {
-    func getQuadImage(picture: ProtoModel, complit: @escaping (Data) -> ()) {
+    func getQuadImage(picture: ProtoModel, complition: @escaping (Data) -> ()) {
         guard let flPicture:FlickrPicture = picture as? FlickrPicture else {return}
-        DispatchQueue.global().async {
-            self.network.loadQuadPicture(picture: flPicture, complit: complit)
-        }
+        self.network.loadQuadPicture(picture: flPicture, complition: complition)
     }
     
-    func getOrigImage(picture: ProtoModel, complit: @escaping (Data) -> ()) {
+    func getOrigImage(picture: ProtoModel, complition: @escaping (Data) -> ()) {
         guard let flPicture:FlickrPicture = picture as? FlickrPicture else {return}
-        DispatchQueue.global().async {
-            self.network.loadQuadPicture(picture: flPicture, complit: complit)
-        }
+        self.network.loadOrigPicture(picture: flPicture, complition: complition)
     }
     
     var network:NetworkFlickr
@@ -32,24 +28,17 @@ class FlickrRepository: ProtoRepository
         self.network = NetworkFlickr()
     }
     
-    func getData(complit: @escaping ([ProtoModel]) -> ()) {
-        DispatchQueue.global().sync {
+    func getData(complition: @escaping ([ProtoModel]) -> ()) {
             self.network.getInterestingnes { data in
-            
-            var pictureArray = [FlickrPicture]()
-            
-            for pictureID in data {
-                if let newPicture = self.network.pictureInfo(flickrPictureID: pictureID){
-                    pictureArray.append(newPicture)
+                var pictureArray = [FlickrPicture]()
+                for pictureID in data {
+                    pictureArray.append(FlickrPicture(pictureID: pictureID))
                 }
-            }
             
-            DispatchQueue.main.async {
-                complit(pictureArray)
-            }
-            }
+                DispatchQueue.main.async {
+                    complition(pictureArray)
+                }
         }
-        
     }
     
 }

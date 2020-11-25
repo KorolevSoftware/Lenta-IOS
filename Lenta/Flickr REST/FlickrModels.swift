@@ -21,6 +21,16 @@ struct FlickrPicturePages: Decodable {
 
 struct FlickrPictureID: Decodable {
     let id:String
+    let title:String
+    let description:Description
+    let ownername:String
+    let views:String
+    let url_q:URL
+    let url_c:URL
+    
+    struct Description: Decodable  {
+        let _content:String
+    }
 }
 
 struct FlickrPicture:ProtoModel {
@@ -29,17 +39,33 @@ struct FlickrPicture:ProtoModel {
     var description: String
     var authName: String
     var viewCount: Int
+    let url_q:URL
+    let url_c:URL
     
-    init(pictureInfo:FlickrPhotoInfo) {
-        self.id = pictureInfo.id
-        self.title = pictureInfo.title._content
-        self.description = pictureInfo.description._content.isEmpty ?
-            pictureInfo.description._content:
-        pictureInfo.title._content
+    init(pictureID:FlickrPictureID) {
+        self.id = pictureID.id
+        self.title = pictureID.title
+        self.description = pictureID.description._content.isEmpty ?
+            pictureID.title:
+            pictureID.description._content
+            
         
-        self.authName = pictureInfo.owner.realname
-        self.viewCount = Int(pictureInfo.views) ?? 0
+        self.authName = pictureID.ownername
+        self.viewCount = Int(pictureID.views) ?? 0
+        self.url_q = pictureID.url_q
+        self.url_c = pictureID.url_c
     }
+    
+//    init(pictureInfo:FlickrPhotoInfo) {
+//        self.id = pictureInfo.id
+//        self.title = pictureInfo.title._content
+//        self.description = pictureInfo.description._content.isEmpty ?
+//            pictureInfo.description._content:
+//        pictureInfo.title._content
+//
+//        self.authName = pictureInfo.owner.realname
+//        self.viewCount = Int(pictureInfo.views) ?? 0
+//    }
     
 }
 

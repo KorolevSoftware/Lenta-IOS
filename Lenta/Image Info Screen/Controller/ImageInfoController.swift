@@ -11,6 +11,10 @@ import UIKit
 class ImageInfoController: UIViewController {
 
     @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var pictureDiscription: UILabel!
+    @IBOutlet weak var viewCount: UILabel!
+    @IBOutlet weak var authName: UILabel!
+    
     
     var model:ProtoModel?
     var repository:ProtoRepository!
@@ -18,6 +22,9 @@ class ImageInfoController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let model = model else { return }
+        pictureDiscription.text = model.description
+        authName.text = model.authName
+        viewCount.text = String(model.viewCount)
         repository.getOrigImage(picture: model) { data in
             self.picture.image = UIImage(data: data)
         }

@@ -13,7 +13,7 @@ class ScrollViewController: UIViewController {
     
     @IBOutlet weak var tableView:UITableView!
 
-    var repository:FlickrRepository?
+    var repository:ProtoRepository?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +53,8 @@ extension ScrollViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let newImageCell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
-        
-        newImageCell.bind(picture: data[indexPath.row])
-        newImageCell.repository = repository
+            newImageCell.bind(picture: data[indexPath.row], repository:repository!)
+
         return newImageCell
     }
 }

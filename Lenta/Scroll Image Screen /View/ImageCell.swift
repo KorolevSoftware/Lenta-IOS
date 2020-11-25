@@ -12,11 +12,9 @@ class ImageCell: UITableViewCell {
     @IBOutlet weak var tImage:UIImageView!
     @IBOutlet weak var tText:UILabel!
     
-    var repository:ProtoRepository?
     
-    func bind(picture:ProtoModel)
+    func bind(picture:ProtoModel, repository:ProtoRepository)
     {
-        guard let repository = repository else { return }
         self.tText.text = picture.title.isEmpty ? "Picture": picture.title
         
         repository.getQuadImage(picture: picture) { data in
