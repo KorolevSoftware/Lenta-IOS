@@ -57,13 +57,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		570046A225713A7A0092DAB2 /* Zoom Image Screen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Zoom Image Screen";
-			sourceTree = "<group>";
-		};
 		5702008A256C0F4700F3392B /* Image Info Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +196,6 @@
 				578AFACF2567F3D700D3A549 /* Application */,
 				578AFAD52567F5E200D3A549 /* Scroll Image Screen  */,
 				5702008A256C0F4700F3392B /* Image Info Screen */,
-				570046A225713A7A0092DAB2 /* Zoom Image Screen */,
 				578AFAD42567F4B000D3A549 /* Support Files */,
 			);
 			path = Lenta;

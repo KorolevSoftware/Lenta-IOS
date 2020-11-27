@@ -9,8 +9,8 @@
 import Foundation
 
 enum NetworkResponse<T> {
-    case success(_ data: T,_ isCeche: Bool)
-    case failure(_ error: NetworkError)
+    case success(T,_ isCeche: Bool)
+    case failure( NetworkError)
 }
 
 enum NetworkError: CustomStringConvertible {
@@ -48,12 +48,12 @@ class NetworkService {
         cache.storeCachedResponse(cacheData, for: request)
     }
     
-    func getDataAsync(url:URL, complition: @escaping (NetworkResponse<Data>) -> ()) {
+    func getDataAsync(url:URL, complition: @escaping (NetworkResponse<Data>) -> Void) {
         
         let session = URLSession.shared
         let request = URLRequest(url: url)
         
-        session.dataTask(with: url) { (data, response, error) in
+        session.dataTask(with: url) { data, response, error in
             guard let data = data, let response = response  else {
                 if let error = error as? URLError, error.code == URLError.Code.notConnectedToInternet {
                     if let cacheData = self.getFromCache(request: request) {

@@ -11,7 +11,7 @@ import Foundation
 
 class NetworkFlickr
 {
-    public func getInterestingnes(complition: @escaping (NetworkResponse<[FlickrPicture]?>) -> ())
+    public func getInterestingnes(complition: @escaping (NetworkResponse<[FlickrPicture]?>) -> Void)
     {
         let searchUrl = "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=f52542e77c35e91f4a50303ed505ac14&sort=relevance&extras=url_q,views,url_c,owner_name,description&format=json&nojsoncallback=1"
         
@@ -20,7 +20,7 @@ class NetworkFlickr
             return
         }
         
-        NetworkService.shared.getDataAsync(url: url) { (data) in
+        NetworkService.shared.getDataAsync(url: url) { data in
             if case .failure(let error) = data {
                 complition(.failure(error))
             }

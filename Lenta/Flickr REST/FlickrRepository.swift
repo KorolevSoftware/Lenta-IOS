@@ -10,12 +10,12 @@ import Foundation
 
 class FlickrRepository: ProtoRepository
 {
-    func getQuadImage(picture: ProtoModel, complition: @escaping (NetworkResponse<Data>) -> ()) {
+    func getQuadImage(picture: ProtoModel, complition: @escaping (NetworkResponse<Data>) -> Void) {
         guard let flPicture = picture as? FlickrPicture else { return }
         self.network.loadQuadPicture(picture: flPicture, complition: complition)
     }
     
-    func getOrigImage(picture: ProtoModel, complition: @escaping (NetworkResponse<Data>) -> ()) {
+    func getOrigImage(picture: ProtoModel, complition: @escaping (NetworkResponse<Data>) -> Void) {
         guard let flPicture = picture as? FlickrPicture else { return }
         self.network.loadOrigPicture(picture: flPicture, complition: complition)
     }
@@ -26,7 +26,7 @@ class FlickrRepository: ProtoRepository
         self.network = NetworkFlickr()
     }
     
-    func getData(complition: @escaping (NetworkResponse<[ProtoModel]>) -> ()) {
+    func getData(complition: @escaping (NetworkResponse<[ProtoModel]>) -> Void) {
         self.network.getInterestingnes { data in
             DispatchQueue.main.async {
                 

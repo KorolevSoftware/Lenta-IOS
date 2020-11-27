@@ -17,10 +17,10 @@ class ScrollViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.activityIndicator.isHidden = false
-        self.activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         
-        self.view.bringSubviewToFront(activityIndicator)
+        view.bringSubviewToFront(activityIndicator)
         repository = FlickrRepository()
         
         if let repository = repository {
