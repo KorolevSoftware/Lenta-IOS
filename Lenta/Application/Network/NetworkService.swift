@@ -8,71 +8,66 @@
 
 import Foundation
 
-class NetworkService {
+enum NetworkResponse<T> {
+    case success(_ data: T,_ isCeche: Bool)
+    case failure(_ error: NetworkError)
+}
+
+enum NetworkError: CustomStringConvertible {
+    case unknown
+    case noNetworkConnect
+    case noDataOrResponse
+    case decodeDataError
+    case urlError
     
-    private init(){}
-    
-    static let shared = NetworkService()
-  
-    func getDataAsyncMain(url:URL, complition: @escaping (Data) -> ())
-    {
-        // Global value for web
-        let session = URLSession.shared
-        let cache = URLCache.shared
-        let request = URLRequest(url: url)
-        
-        // Main ui sync
-        
-        
-        // if cache have data get him, else load/cache and get him
-        DispatchQueue.global(qos: .userInitiated).async {
-            if let data = cache.cachedResponse(for: request)?.data {
-                DispatchQueue.main.async {
-                    complition(data)
-                }
-            }
-            else{
-                session.dataTask(with: url) {(data, responce, error) in
-                    guard let data = data, let responce = responce  else {
-                        print("NetworkService error \(String(describing: error))")
-                        return
-                    }
-                    let cacheData = CachedURLResponse(response: responce, data: data)
-                    cache.storeCachedResponse(cacheData, for: request)
-                    DispatchQueue.main.async {
-                        complition(data)
-                    }
-                    }.resume()
-            }
-        }
-        
-    }
-    func getDataAsync(url:URL, complition: @escaping (Data) -> ()) {
-        
-        // Global value for web
-        let session = URLSession.shared
-        let cache = URLCache.shared
-        let request = URLRequest(url: url)
-        
-        // Main ui sync
- 
-        
-        // if cache have data get him, else load/cache and get him
-        DispatchQueue.global(qos: .default).async {
-            if let data = cache.cachedResponse(for: request)?.data {
-                complition(data)
-            }
-            else{
-                session.dataTask(with: url) {(data, responce, error) in
-                    guard let data = data, let responce = responce  else {
-                        print("NetworkService error \(String(describing: error))")
-                        return
-                    }
-                    let cacheData = CachedURLResponse(response: responce, data: data)
-                    cache.storeCachedResponse(cacheData, for: request)
-                    complition(data)
-                }.resume()
-            }
+    var description : String {
+        switch self {
+        case .unknown: return " Network Error unknown"
+        case .noNetworkConnect: return "NetworkError no internet connection, check internet"
+        case .noDataOrResponse: return "NetworkError no data or response"
+        case .decodeDataError: return "NetworkError decode data Error(json)"
+        case .urlError: return "Url Error"
         }
     }
 }
+
+class NetworkService {
+    
+    private init() {}
+    
+    static let shared = NetworkService()
+    
+    func getFromCache(request: URLRequest) -> Data? {
+        let cache = URLCache.shared
+        return cache.cachedResponse(for: request)?.data
+    }
+    
+    func saveFromCache(response:URLResponse, request: URLRequest, data: Data) {
+        let cache = URLCache.shared
+        let cacheData = CachedURLResponse(response: response, data: data)
+        cache.storeCachedResponse(cacheData, for: request)
+    }
+    
+    func getDataAsync(url:URL, complition: @escaping (NetworkResponse<Data>) -> ()) {
+        
+        let session = URLSession.shared
+        let request = URLRequest(url: url)
+        
+        session.dataTask(with: url) { (data, response, error) in
+            guard let data = data, let response = response  else {
+                if let error = error as? URLError, error.code == URLError.Code.notConnectedToInternet {
+                    if let cacheData = self.getFromCache(request: request) {
+                        complition(.success(cacheData, true))
+                    }
+                    else {
+                        complition(.failure(.noNetworkConnect))
+                    }
+                }
+                return complition(.failure(.noDataOrResponse))
+            }
+            self.saveFromCache(response:response, request: request, data: data)
+            complition(.success(data, false))
+            }.resume()
+        }
+    }
+

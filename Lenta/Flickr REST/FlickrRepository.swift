@@ -8,17 +8,15 @@
 
 import Foundation
 
-
-
 class FlickrRepository: ProtoRepository
 {
-    func getQuadImage(picture: ProtoModel, complition: @escaping (Data) -> ()) {
-        guard let flPicture:FlickrPicture = picture as? FlickrPicture else {return}
+    func getQuadImage(picture: ProtoModel, complition: @escaping (NetworkResponse<Data>) -> ()) {
+        guard let flPicture = picture as? FlickrPicture else { return }
         self.network.loadQuadPicture(picture: flPicture, complition: complition)
     }
     
-    func getOrigImage(picture: ProtoModel, complition: @escaping (Data) -> ()) {
-        guard let flPicture:FlickrPicture = picture as? FlickrPicture else {return}
+    func getOrigImage(picture: ProtoModel, complition: @escaping (NetworkResponse<Data>) -> ()) {
+        guard let flPicture = picture as? FlickrPicture else { return }
         self.network.loadOrigPicture(picture: flPicture, complition: complition)
     }
     
@@ -28,17 +26,23 @@ class FlickrRepository: ProtoRepository
         self.network = NetworkFlickr()
     }
     
-    func getData(complition: @escaping ([ProtoModel]) -> ()) {
-            self.network.getInterestingnes { data in
-                var pictureArray = [FlickrPicture]()
-                for pictureID in data {
-                    pictureArray.append(FlickrPicture(pictureID: pictureID))
+    func getData(complition: @escaping (NetworkResponse<[ProtoModel]>) -> ()) {
+        self.network.getInterestingnes { data in
+            DispatchQueue.main.async {
+                
+                if case .success(let picture, let isCache) = data {
+                    if let picture = picture{
+                        complition(.success(picture, isCache))
+                    }
+                    else {
+                        complition(.failure(.noDataOrResponse))
+                    }
                 }
-            
-                DispatchQueue.main.async {
-                    complition(pictureArray)
+                
+                if case .failure(let networkError) = data {
+                    complition(.failure(networkError))
                 }
+            }
         }
     }
-    
 }

@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570046A6257152650092DAB2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570046A5257152650092DAB2 /* Utils.swift */; };
 		57020089256C0EEB00F3392B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57020088256C0EEB00F3392B /* UIImage.swift */; };
 		5702008F256C2CE400F3392B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702008E256C2CE400F3392B /* NetworkService.swift */; };
 		57020092256D524800F3392B /* FlickrModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57020091256D524800F3392B /* FlickrModels.swift */; };
 		57020094256D542200F3392B /* ProtoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57020093256D542200F3392B /* ProtoRepository.swift */; };
 		57020096256D547A00F3392B /* FlickrRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57020095256D547A00F3392B /* FlickrRepository.swift */; };
 		578AFADA2568090000D3A549 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578AFAD92568090000D3A549 /* ImageCell.swift */; };
-		578AFADC25680B5000D3A549 /* ScrollImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578AFADB25680B5000D3A549 /* ScrollImage.storyboard */; };
+		578AFADC25680B5000D3A549 /* Aplication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578AFADB25680B5000D3A549 /* Aplication.storyboard */; };
 		578AFADE256815B100D3A549 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578AFADD256815B100D3A549 /* PictureModel.swift */; };
 		578AFAE025681BBB00D3A549 /* FlickrNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578AFADF25681BBB00D3A549 /* FlickrNetwork.swift */; };
 		579FA8AB256AFBE600858CED /* ImageInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579FA8AA256AFBE600858CED /* ImageInfoController.swift */; };
@@ -25,13 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570046A5257152650092DAB2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		57020088256C0EEB00F3392B /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		5702008E256C2CE400F3392B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		57020091256D524800F3392B /* FlickrModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrModels.swift; sourceTree = "<group>"; };
 		57020093256D542200F3392B /* ProtoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoRepository.swift; sourceTree = "<group>"; };
 		57020095256D547A00F3392B /* FlickrRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrRepository.swift; sourceTree = "<group>"; };
 		578AFAD92568090000D3A549 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		578AFADB25680B5000D3A549 /* ScrollImage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScrollImage.storyboard; sourceTree = "<group>"; };
+		578AFADB25680B5000D3A549 /* Aplication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Aplication.storyboard; sourceTree = "<group>"; };
 		578AFADD256815B100D3A549 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
 		578AFADF25681BBB00D3A549 /* FlickrNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrNetwork.swift; sourceTree = "<group>"; };
 		579FA8AA256AFBE600858CED /* ImageInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfoController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570046A225713A7A0092DAB2 /* Zoom Image Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Zoom Image Screen";
+			sourceTree = "<group>";
+		};
 		5702008A256C0F4700F3392B /* Image Info Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +122,7 @@
 		578AFAD12567F46200D3A549 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				578AFADB25680B5000D3A549 /* ScrollImage.storyboard */,
+				578AFADB25680B5000D3A549 /* Aplication.storyboard */,
 				57AFC90E2567E92000C32180 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -131,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				57020088256C0EEB00F3392B /* UIImage.swift */,
+				570046A5257152650092DAB2 /* Utils.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -193,6 +203,7 @@
 				578AFACF2567F3D700D3A549 /* Application */,
 				578AFAD52567F5E200D3A549 /* Scroll Image Screen  */,
 				5702008A256C0F4700F3392B /* Image Info Screen */,
+				570046A225713A7A0092DAB2 /* Zoom Image Screen */,
 				578AFAD42567F4B000D3A549 /* Support Files */,
 			);
 			path = Lenta;
@@ -257,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57AFC9102567E92000C32180 /* LaunchScreen.storyboard in Resources */,
-				578AFADC25680B5000D3A549 /* ScrollImage.storyboard in Resources */,
+				578AFADC25680B5000D3A549 /* Aplication.storyboard in Resources */,
 				57AFC90D2567E92000C32180 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +285,7 @@
 				5702008F256C2CE400F3392B /* NetworkService.swift in Sources */,
 				578AFADE256815B100D3A549 /* PictureModel.swift in Sources */,
 				57AFC9052567E91E00C32180 /* ScrollImageController.swift in Sources */,
+				570046A6257152650092DAB2 /* Utils.swift in Sources */,
 				578AFADA2568090000D3A549 /* ImageCell.swift in Sources */,
 				57AFC9032567E91E00C32180 /* AppDelegate.swift in Sources */,
 				57AFC90B2567E91E00C32180 /* Lenta.xcdatamodeld in Sources */,

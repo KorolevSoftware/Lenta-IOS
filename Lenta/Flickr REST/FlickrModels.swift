@@ -10,65 +10,47 @@ import Foundation
 
 struct FlickrPicturePages: Decodable {
     let photos:FlickrPicturePage
-
+    
     struct FlickrPicturePage: Decodable {
         let page:Int
         let pages:Int
         let perpage:Int
-        let photo:[FlickrPictureID]?
+        let photo:[FlickrPicture]?
     }
 }
 
-struct FlickrPictureID: Decodable {
-    let id:String
-    let title:String
-    let description:Description
-    let ownername:String
-    let views:String
-    let url_q:URL
-    let url_c:URL
+struct Description: Decodable  {
+    let content:String
     
-    struct Description: Decodable  {
-        let _content:String
+    enum CodingKeys: String, CodingKey {
+        case content = "_content"
     }
 }
 
-struct FlickrPicture:ProtoModel {
+struct FlickrPicture:ProtoModel, Decodable {
     let id:String
     var title: String
-    var description: String
-    var authName: String
-    var viewCount: Int
-    let url_q:URL
-    let url_c:URL
-    
-    init(pictureID:FlickrPictureID) {
-        self.id = pictureID.id
-        self.title = pictureID.title
-        self.description = pictureID.description._content.isEmpty ?
-            pictureID.title:
-            pictureID.description._content
-            
-        
-        self.authName = pictureID.ownername
-        self.viewCount = Int(pictureID.views) ?? 0
-        self.url_q = pictureID.url_q
-        self.url_c = pictureID.url_c
+    var description: String {
+        get{ return descriptionRaw.content }
     }
+    let descriptionRaw: Description
+    var authName: String
+    var viewCount: String
+    let quadPicture:URL
+    let originPicture:URL
     
-//    init(pictureInfo:FlickrPhotoInfo) {
-//        self.id = pictureInfo.id
-//        self.title = pictureInfo.title._content
-//        self.description = pictureInfo.description._content.isEmpty ?
-//            pictureInfo.description._content:
-//        pictureInfo.title._content
-//
-//        self.authName = pictureInfo.owner.realname
-//        self.viewCount = Int(pictureInfo.views) ?? 0
-//    }
-    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case quadPicture = "url_q"
+        case originPicture = "url_c"
+        case authName = "ownername"
+        case viewCount = "views"
+        case descriptionRaw = "description"
+    }
 }
 
+/// Flickr Picture Info and all Size
 
 //struct FlickrPictureContainer:Decodable
 //{

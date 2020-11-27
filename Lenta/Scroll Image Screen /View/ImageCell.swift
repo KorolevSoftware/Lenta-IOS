@@ -18,8 +18,12 @@ class ImageCell: UITableViewCell {
         self.tText.text = picture.title.isEmpty ? "Picture": picture.title
         
         repository.getQuadImage(picture: picture) { data in
-            self.tImage.image = UIImage(data:data)
-            self.updateConstraints()
+            DispatchQueue.main.async {
+                if case .success(let pictureData, let isCache) = data {
+                    self.tImage.image = UIImage(data: pictureData)
+                }
+                //self.updateConstraints()
+            }
         }
         self.tImage.makeRounded(5)
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ProtoRepository {
-    func getData(complition:@escaping ([ProtoModel])->())
-    func getQuadImage(picture:ProtoModel, complition:@escaping (Data)->())
-    func getOrigImage(picture:ProtoModel, complition:@escaping (Data)->())
+    func getData(complition:@escaping (NetworkResponse<[ProtoModel]>)->())
+    func getQuadImage(picture:ProtoModel, complition:@escaping (NetworkResponse<Data>)->())
+    func getOrigImage(picture:ProtoModel, complition:@escaping (NetworkResponse<Data>)->())
 }
