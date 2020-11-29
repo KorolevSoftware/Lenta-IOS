@@ -2,7 +2,7 @@
 This project demonstrates my ability to develop applications in Swift + rest api
 
 
-* Libs *
+*Libs*
 - only Swift std
 
 Capabilities:
@@ -10,10 +10,11 @@ Capabilities:
 - Cache data for offline mode
 - 2 Screen tableView and detail
 
-![screen 1](image/screen1.png)
-![screen 2](image/screen2.png)
+![screen 1](screens/screen1.png)
+![screen 2](screens/screen2.png)
 
 
 **Offline Mode**
-![screen 3](image/screen3.png)
-![screen 4](image/screen4.png)
+
+![screen 3](screens/screen3.png)
+![screen 4](screens/screen4.png)
