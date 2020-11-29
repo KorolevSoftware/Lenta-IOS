@@ -35,11 +35,11 @@ class ScrollViewController: UIViewController {
                     self.activityIndicator.stopAnimating()
                     if isCache
                     {
-                        self.present(Utils.alertInfo(title: "Offline", message: "No Actual data"),animated: true, completion: nil)
+                        self.showAlertInfo(title: "Offline", message: "No Actual data")
                     }
                     
                 case .failure(let networkError):
-                    self.present(Utils.alertInfo(title: "Internet", message: "Internet error"),animated: true, completion: nil)
+                    self.showAlertInfo(title: "Internet", message: "Internet error")
                     print("\(networkError)")
                 }
                 
@@ -72,3 +72,6 @@ extension ScrollViewController:UITableViewDataSource {
         return newImageCell
     }
 }
+
+
+extension ScrollViewController: AlertPresentable{}

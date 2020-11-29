@@ -9,14 +9,15 @@
 import Foundation
 import UIKit
 
+protocol AlertPresentable {
+    func showAlertInfo(title:String, message:String)
+}
 
-class Utils {
-    
-static func alertInfo(title:String, message:String) -> UIAlertController {
+extension AlertPresentable where Self: UIViewController {
+func showAlertInfo(title:String, message:String) {
     let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
     let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
     ac.addAction(ok)
-    return ac
+    self.present(ac, animated: true, completion: nil)
     }
-    
 }

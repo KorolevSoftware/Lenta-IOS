@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		570046A6257152650092DAB2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570046A5257152650092DAB2 /* Utils.swift */; };
+		570046A6257152650092DAB2 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570046A5257152650092DAB2 /* AlertPresentable.swift */; };
 		57020089256C0EEB00F3392B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57020088256C0EEB00F3392B /* UIImage.swift */; };
 		5702008F256C2CE400F3392B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5702008E256C2CE400F3392B /* NetworkService.swift */; };
 		57020092256D524800F3392B /* FlickrModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57020091256D524800F3392B /* FlickrModels.swift */; };
@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		570046A5257152650092DAB2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		570046A5257152650092DAB2 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		57020088256C0EEB00F3392B /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		5702008E256C2CE400F3392B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		57020091256D524800F3392B /* FlickrModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrModels.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				57020088256C0EEB00F3392B /* UIImage.swift */,
-				570046A5257152650092DAB2 /* Utils.swift */,
+				570046A5257152650092DAB2 /* AlertPresentable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 				5702008F256C2CE400F3392B /* NetworkService.swift in Sources */,
 				578AFADE256815B100D3A549 /* PictureModel.swift in Sources */,
 				57AFC9052567E91E00C32180 /* ScrollImageController.swift in Sources */,
-				570046A6257152650092DAB2 /* Utils.swift in Sources */,
+				570046A6257152650092DAB2 /* AlertPresentable.swift in Sources */,
 				578AFADA2568090000D3A549 /* ImageCell.swift in Sources */,
 				57AFC9032567E91E00C32180 /* AppDelegate.swift in Sources */,
 				57AFC90B2567E91E00C32180 /* Lenta.xcdatamodeld in Sources */,

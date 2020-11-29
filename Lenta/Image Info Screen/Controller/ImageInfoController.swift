@@ -24,8 +24,7 @@ class ImageInfoController: UIViewController {
         authName.text = noData
         pictureDiscription.text = noData
         viewCount.text = "0"
-        
-        present(Utils.alertInfo(title: "Internet", message: "No internet connect"),animated: true, completion: nil)
+        showAlertInfo(title: "Internet", message: "No internet connect")
     }
     
     override func viewDidLoad() {
@@ -58,3 +57,5 @@ class ImageInfoController: UIViewController {
         }
     }
 }
+
+extension ImageInfoController: AlertPresentable {}
