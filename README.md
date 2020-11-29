@@ -5,7 +5,7 @@
 <img src="https://img.shields.io/badge/IOS-Swift-yellow" >
 <img src="https://img.shields.io/badge/Flickr-image-blue" >
 </p>
-# Lenta IOS
+#Lenta IOS
 This project demonstrates my ability to develop applications in Swift + rest api
 
 
@@ -18,6 +18,7 @@ Capabilities:
 - 2 Screen tableView and detail
 
 
+**Online Mode**
 
 ![screen 1](screens/screen1.png)
 ![screen 2](screens/screen2.png)
