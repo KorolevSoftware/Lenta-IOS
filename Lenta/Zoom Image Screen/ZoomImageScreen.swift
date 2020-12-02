@@ -25,7 +25,7 @@ class ZoomImageScreen: UIViewController, UIScrollViewDelegate {
         return pictureView
     }
     
-    func setImage(image: UIImage) {
+    func setImage(image: UIImage?) {
         imageForZoom = image
     }
 }

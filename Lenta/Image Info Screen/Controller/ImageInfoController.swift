@@ -60,7 +60,7 @@ class ImageInfoController: UIViewController {
         if segue.identifier == "\(ZoomImageScreen.self)"
         {
             let zicv = segue.destination as! ZoomImageScreen
-            zicv.setImage(image: picture.image!)
+            zicv.setImage(image: picture.image)
         }
     }
 }
