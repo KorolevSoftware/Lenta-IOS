@@ -17,7 +17,6 @@ class ImageInfoController: UIViewController {
     
     var model:ProtoModel?
     var repository:ProtoRepository!
-    
     func viewPlaceholder() {
         let noData = "no load data"
         picture.image = UIImage(named: "placeholder")
@@ -54,6 +53,14 @@ class ImageInfoController: UIViewController {
                     print("\(netError)")
                 }
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "\(ZoomImageScreen.self)"
+        {
+            let zicv = segue.destination as! ZoomImageScreen
+            zicv.setImage(image: picture.image!)
         }
     }
 }

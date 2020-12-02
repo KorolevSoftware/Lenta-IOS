@@ -23,6 +23,7 @@
 		57AFC90B2567E91E00C32180 /* Lenta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57AFC9092567E91E00C32180 /* Lenta.xcdatamodeld */; };
 		57AFC90D2567E92000C32180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57AFC90C2567E92000C32180 /* Assets.xcassets */; };
 		57AFC9102567E92000C32180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFC90E2567E92000C32180 /* LaunchScreen.storyboard */; };
+		57B6F4D22577F6F700B62BA2 /* ZoomImageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B6F4D12577F6F700B62BA2 /* ZoomImageScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		57AFC90C2567E92000C32180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57AFC90F2567E92000C32180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57AFC9112567E92000C32180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57B6F4D12577F6F700B62BA2 /* ZoomImageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,9 +198,18 @@
 				578AFACF2567F3D700D3A549 /* Application */,
 				578AFAD52567F5E200D3A549 /* Scroll Image Screen  */,
 				5702008A256C0F4700F3392B /* Image Info Screen */,
+				57B6F4D02577F6D100B62BA2 /* Zoom Image Screen */,
 				578AFAD42567F4B000D3A549 /* Support Files */,
 			);
 			path = Lenta;
+			sourceTree = "<group>";
+		};
+		57B6F4D02577F6D100B62BA2 /* Zoom Image Screen */ = {
+			isa = PBXGroup;
+			children = (
+				57B6F4D12577F6F700B62BA2 /* ZoomImageScreen.swift */,
+			);
+			path = "Zoom Image Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +285,7 @@
 			files = (
 				57020096256D547A00F3392B /* FlickrRepository.swift in Sources */,
 				57020092256D524800F3392B /* FlickrModels.swift in Sources */,
+				57B6F4D22577F6F700B62BA2 /* ZoomImageScreen.swift in Sources */,
 				5702008F256C2CE400F3392B /* NetworkService.swift in Sources */,
 				578AFADE256815B100D3A549 /* PictureModel.swift in Sources */,
 				57AFC9052567E91E00C32180 /* ScrollImageController.swift in Sources */,

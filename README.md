@@ -15,7 +15,7 @@ This project demonstrates my ability to develop applications in Swift + rest api
 Capabilities:
 - Load data from Flickr api
 - Cache data for offline mode
-- 2 Screen tableView and detail
+- 3 Screen tableView, detail, zoom
 
 
 **Online Mode**
