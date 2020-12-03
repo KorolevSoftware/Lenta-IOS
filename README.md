@@ -1,7 +1,4 @@
 <p align="center">
-  
-<img src="https://img.shields.io/badge/Android-X-green">
-
 <img src="https://img.shields.io/badge/IOS-Swift-yellow" >
 <img src="https://img.shields.io/badge/Flickr-image-blue" >
 </p>
